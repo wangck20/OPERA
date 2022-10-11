@@ -4,7 +4,6 @@ This repository is the official implementation of **"OPERA: Omni-Supervised Repr
 
 ![framework](figures/framework.png)
 
-![result](figures/result.png)
 
 ## Updates
 
@@ -15,7 +14,9 @@ Under construction.
 - [ ] Pretrained models
 - [ ] Downstream tasks code
 
-  
+## Results
+
+<img src=figures/result.png height="480px" width="660px" />
 
 ## Preparation
 
