@@ -2,9 +2,9 @@
 
 This repository is the official implementation of **"OPERA: Omni-Supervised Representation Learning with Hierarchical Supervisions"**. 
 
-![framework](figures/framework.pdf)
+![framework](figures/framework.png)
 
-![framework](figures/result.pdf)
+![result](figures/result.png)
 
 ## Updates
 
