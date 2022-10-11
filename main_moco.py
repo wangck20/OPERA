@@ -330,7 +330,7 @@ def main_worker(gpu, ngpus_per_node, args):
                 'state_dict': model.state_dict(),
                 'optimizer' : optimizer.state_dict(),
                 'scaler': scaler.state_dict(),
-            }, is_best=False, filename='/mnt/cfs/algorithm/chengkun.wang/wck/experiments/moco_deit_small_omni_300_4096/checkpoint_%04d.pth.tar' % epoch)
+            }, is_best=False, filename='./experiments/moco_deit_small_omni_300_4096/checkpoint_%04d.pth.tar' % epoch)
 
     # if args.rank == 0:
     #     summary_writer.close()
@@ -444,10 +444,10 @@ def l2_norm(input):
     return output
 
 
-def save_checkpoint(state, is_best, filename='/mnt/cfs/algorithm/chengkun.wang/wck/experiments/moco_deit_small_omni_300_4096/checkpoint.pth.tar'):
+def save_checkpoint(state, is_best, filename='./experiments/moco_deit_small_omni_300_4096/checkpoint.pth.tar'):
     torch.save(state, filename)
     if is_best:
-        shutil.copyfile(filename, '/mnt/cfs/algorithm/chengkun.wang/wck/experiments/moco_deit_small_omni_300_4096/model_best.pth.tar')
+        shutil.copyfile(filename, './experiments/moco_deit_small_omni_300_4096/model_best.pth.tar')
 
 
 class AverageMeter(object):
