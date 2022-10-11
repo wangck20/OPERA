@@ -41,17 +41,11 @@ Organize ImageNet as follows:
         |- ...
 ```
 
-### Pretrained models
-
-
-
 ### Requirements
 
-To install requirements:
-
-```setup
-pip install -r requirements.txt
-```
+- Python3
+- PyTorch (> 1.0)
+- NumPy
 
 ### Device 
 
@@ -59,36 +53,44 @@ We conducted most of the experiments with 8 Nvidia RTX 3090 GPU cards.
 
 ## Training Models
 
-### Baseline method
-
-To pretrain a ResNet50 on ImageNet-1K using MoCo-v3, please run the command as follows:
-```python
-python train.py
-```
-
 ### OPERA
 
-To pretrain a ResNet50 on ImageNet-1K using OPERA, please run the command as follows:
-```python
-python train.py 
+To pretrain a ResNet50 on ImageNet-1K for 150 epochs using OPERA on 8 Nvidia RTX 3090 GPU cards, please run the command as follows:
+```
+python main_moco.py \
+  --lr=.3 --epochs=150 -b 1024 \
+  --moco-m-cos --crop-min=.2 \
+  --dist-url 'tcp://localhost:10001' \
+  --multiprocessing-distributed --world-size 1 --rank 0 \
+  [your imagenet-folder with train and val folders]
 ```
 
+To pretrain a DeiT-Small (ViT-Small) on ImageNet-1K for 150 epochs using OPERA on 8 Nvidia RTX 3090 GPU cards, please run the command as follows:
+```
+python main_moco.py \
+  -a vit_small --epochs=150 -b 1024 \
+  --optimizer=adamw --lr=1.5e-4 --weight-decay=.1 \
+  --epochs=300 --warmup-epochs=40 \
+  --stop-grad-conv1 --moco-m-cos --moco-t=.2 \
+  --dist-url 'tcp://localhost:10001' \
+  --multiprocessing-distributed --world-size 1 --rank 0 \
+  [your imagenet-folder with train and val folders]
+```
 
 ### More options
 
 There are more options to train various models:
 | Args | Options |
 | - | - |
-| --dataset | mnist / cifar10 / imagenet |
-| --model | simple / allconv12 / lenet |
-| --optim | sgd / adamw / |
+| -b | 1024 / 2048 / 4096 |
+| --epochs |  100/ 150 / 300 |
+| --arch | resnet50 / vit_small / vit_base|
 
 
 
 ## Acknowledgments
 
-Our code is based on 
-
+Our code is based on MoCo-v3 in (https://github.com/facebookresearch/moco-v3).
 
 
 ## Citation
