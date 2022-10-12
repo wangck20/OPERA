@@ -6,6 +6,10 @@ This repository is the official implementation of **"OPERA: Omni-Supervised Repr
 
 ![framework](figures/framework.png)
 
+## Highlighs
+- A unified framework for fully supervised and self-supervised learning based on deep metric learning.
+- End-to-end trainable with improved performance on both CNNs and ViTs on various tasks.
+- A contrastive learning framework with comparable performance to MIM methods (e.g. MAE) on DeiT-B.
 
 ## Updates
 
