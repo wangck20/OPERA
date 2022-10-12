@@ -1,6 +1,8 @@
 # OPERA: Omni-Supervised Representation Learning with Hierarchical Supervisions
 
 This repository is the official implementation of **"OPERA: Omni-Supervised Representation Learning with Hierarchical Supervisions"**. 
+### [Paper](https://arxiv.org/abs/2210.05557)
+> Chengkun Wang\*, [Wenzhao Zheng\*](https://scholar.google.com/citations?user=LdK9scgAAAAJ&hl=en), [Zheng Zhu](http://www.zhengzhu.net/), [Jiwen Lu](http://ivg.au.tsinghua.edu.cn/Jiwen_Lu/), and [Jie Zhou](https://scholar.google.com/citations?user=6a79aPwAAAAJ&hl=en&authuser=1)
 
 ![framework](figures/framework.png)
 
@@ -102,6 +104,7 @@ If you find this project useful in your research, please cite:
 @article{wang2022opera,
     title={OPERA: Omni-Supervised Representation Learning with Hierarchical Supervisions},
     author={Wang, Chengkun and Zheng, Wenzhao and Zhu, Zheng and Zhou, Jie and Lu, Jiwen},
+    journal={arXiv preprint arXiv:2210.05557},
     year={2022}
 }
 ````
